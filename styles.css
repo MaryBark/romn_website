@@ -961,3 +961,117 @@ footer p {
         height: 140px;
     }
 }
+
+/* Стили для изображения рукописи */
+.manuscript-container {
+    position: relative;
+    margin: 0.5rem 0;
+}
+
+.manuscript-container span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.manuscript-image {
+    position: relative;
+    margin: 0.8rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(157, 0, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background-color: rgba(11, 11, 45, 0.6);
+}
+
+.manuscript-image:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 6px 20px rgba(0, 243, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.manuscript-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.manuscript-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--neon-blue);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Для планшетов и десктопов */
+@media (min-width: 576px) {
+    .manuscript-image {
+        max-width: 300px;
+        margin: 0.8rem auto;
+    }
+    
+    .manuscript-img {
+        max-height: 180px;
+    }
+}
+
+@media (min-width: 768px) {
+    .manuscript-image {
+        max-width: 250px;
+        float: right;
+        margin: 0.5rem 0 0.5rem 1rem;
+    }
+    
+    .manuscript-img {
+        max-height: 160px;
+    }
+    
+    .manuscript-container span {
+        display: inline;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .manuscript-image {
+        max-width: 280px;
+        margin: 0.5rem 0 0.5rem 1.5rem;
+    }
+    
+    .manuscript-img {
+        max-height: 180px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 375px) {
+    .manuscript-image {
+        max-height: 150px;
+    }
+    
+    .manuscript-img {
+        max-height: 150px;
+    }
+    
+    .manuscript-caption {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+}
+
+/* Оптимизация для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+    .manuscript-image:hover {
+        transform: none;
+        border-color: rgba(157, 0, 255, 0.3);
+    }
+}
